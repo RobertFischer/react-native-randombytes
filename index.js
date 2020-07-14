@@ -12,7 +12,7 @@ function toBuffer (nativeStr) {
 }
 
 function init () {
-  if (RNRandomBytes.seed) {
+  if (RNRandomBytes && RNRandomBytes.seed) {
     let seedBuffer = toBuffer(RNRandomBytes.seed)
     addEntropy(seedBuffer)
   } else {
