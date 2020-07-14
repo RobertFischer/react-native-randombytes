@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		"target": "ES2015",
+		"module": "es2015",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "dist",
+		"rootDir": "./",
+		"removeComments": true,
+		"importHelpers": true,
+		"downlevelIteration": true,
+		"isolatedModules": true,
+		"preserveConstEnums": true,
+		"alwaysStrict": true,
+		"newLine": "LF",
+		"skipLibCheck": true,
+
+		"allowJs": true,
+		"checkJs": true,
+
+		"strict": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+
+		"preserveSymlinks": false,
+		"allowUmdGlobalAccess": false,
+
+		"forceConsistentCasingInFileNames": true
+	},
+	"exclude": [
+		"node_modules",
+		"**/*.test.js",
+		"**/*.test.ts",
+		"dist"
+	]
+}

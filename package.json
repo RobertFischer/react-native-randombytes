@@ -1,27 +1,51 @@
 {
-  "name": "react-native-randombytes",
-  "version": "3.5.3",
-  "description": "randomBytes for react-native",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mvayngrib/react-native-randombytes.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "react-component",
-    "react-native",
-    "randomBytes",
-    "rng",
-    "ios",
-    "android"
-  ],
-  "dependencies": {
-    "buffer": "^4.9.1",
-    "sjcl": "^1.0.3"
-  },
-  "author": "Mark Vayngrib <mark.vayngrib@lablz.com> (http://github.com/mvayngrib)",
-  "license": "ISC"
+	"name": "randombytes-pure",
+	"version": "3.5.4",
+	"description": "JS-only implementation of randomBytes, intended for use with React Native",
+	"main": "./dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RobertFischer/react-native-randombytes.git"
+	},
+	"scripts": {
+		"test": "tsc --noEmit --project tsconfig.json && jest",
+		"build": "yarn test && tsc --project tsconfig.json"
+	},
+	"keywords": [
+		"react-native",
+		"browser",
+		"randomBytes",
+		"rng",
+		"ios",
+		"android",
+		"mobile",
+		"web",
+		"sjcl"
+	],
+	"dependencies": {
+		"buffer": "^5.6.0",
+		"sjcl": "^1.0.8"
+	},
+	"author": "RobertFischer",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.10.5",
+		"@babel/preset-env": "^7.10.4",
+		"@babel/preset-typescript": "^7.10.4",
+		"@types/node": "^14.0.23",
+		"@types/sjcl": "^1.0.29",
+		"babel-jest": "^26.1.0",
+		"jest": "^26.1.0",
+		"jest-extended": "^0.11.5",
+		"typescript": "^3.9.6"
+	},
+	"jest": {
+		"setupFilesAfterEnv": ["jest-extended"]
+	},
+	"babel": {
+		"presets": [
+			["@babel/preset-env", {"targets": {"node": "current"}}],
+			"@babel/preset-typescript"
+		]
+	}
 }
