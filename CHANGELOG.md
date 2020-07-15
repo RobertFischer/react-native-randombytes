@@ -1,3 +1,5 @@
+<!-- @format -->
+
 ## [4.1.0](https://github.com/RobertFischer/randombytes-pure/compare/v4.0.0...v4.1.0) (2020-07-15)
 
 ### Features
