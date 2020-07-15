@@ -1,3 +1,15 @@
+## [4.1.0](https://github.com/RobertFischer/randombytes-pure/compare/v4.0.0...v4.1.0) (2020-07-15)
+
+### Features
+
+- **completed implementation:** complete the implementation and kick off a build to release ([416c9b0](https://github.com/RobertFischer/randombytes-pure/commit/416c9b0c08f633ccb890f52912a506484bded26f))
+
+## [4.1.0](https://github.com/RobertFischer/randombytes-pure/compare/v4.0.0...v4.1.0) (2020-07-15)
+
+### Features
+
+- **completed implementation:** complete the implementation and kick off a build to release ([416c9b0](https://github.com/RobertFischer/randombytes-pure/commit/416c9b0c08f633ccb890f52912a506484bded26f))
+
 <!-- @format -->
 
 ## [4.0.0](https://github.com/RobertFischer/react-native-randombytes/compare/v3.5.2...v4.0.0) (2020-07-15)
