@@ -57,8 +57,7 @@ jobs:
     needs:
       - test
       - commitlint
-      - upgrade
-      - audit
+      - dependencyUpgradeAndAudit
       - pretty
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
