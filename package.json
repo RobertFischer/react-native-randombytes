@@ -6,11 +6,10 @@
 	"repository": "github:RobertFischer/randombytes-pure",
 	"scripts": {
 		"test": "tsc --noEmit --project tsconfig.json && jest",
-		"build": "yarn test && tsc --project tsconfig.json",
-		"release": "yarn build && semantic-release",
+		"build": "tsc --project tsconfig.json",
+		"release": "yarn test && yarn build && semantic-release",
 		"head:checkCommit": "commitlint --from=HEAD~1",
 		"pretty": "prettier --insert-pragma --write ./*.ts ./*.js ./*.md",
-		"postinstall": "yarn build",
 		"prepublish": "yarn build"
 	},
 	"keywords": [
@@ -75,7 +74,7 @@
 	"husky": {
 		"hooks": {
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"pre-commit": "lint-staged && yarn test",
+			"pre-commit": "lint-staged && yarn test && yarn build && ( git add ./dist || echo 'No changes to ./dist' )",
 			"pre-push": "yarn test"
 		}
 	},

@@ -1,0 +1,1 @@
+{"version":3,"file":"commitlint.config.js","sourceRoot":"","sources":["../commitlint.config.js"],"names":[],"mappings":";AAEA,MAAM,CAAC,OAAO,GAAG;IAChB,OAAO,EAAE,CAAC,iCAAiC,CAAC;IAC5C,KAAK,EAAE;QACN,sBAAsB,EAAE,CAAC,CAAC,EAAE,QAAQ,EAAE,GAAG,CAAC;KAC1C;CACD,CAAC"}
