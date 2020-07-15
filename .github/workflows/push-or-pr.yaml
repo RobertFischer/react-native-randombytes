@@ -10,21 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g yarn
       - run: yarn install --frozen-lockfile --non-interactive --link-duplicates
       - run: yarn test
   commitlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g yarn
       - run: yarn install --frozen-lockfile --non-interactive --link-duplicates
       - run: yarn run head:checkCommit
   upgrade:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g yarn
       - run: yarn upgrade
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -35,7 +32,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g yarn
       - run: yarn audit --groups dependencies
   pretty:
     needs:
@@ -43,7 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g yarn
       - run: yarn install --frozen-lockfile --non-interactive --link-duplicates
       - run: yarn run pretty
       - uses: stefanzweifel/git-auto-commit-action@v4
@@ -61,7 +56,6 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g yarn
       - run: yarn install --frozen-lockfile --non-interactive --link-duplicates
       - run: yarn run release
       - uses: stefanzweifel/git-auto-commit-action@v4
