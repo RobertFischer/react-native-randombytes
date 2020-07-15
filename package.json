@@ -1,6 +1,6 @@
 {
 	"name": "randombytes-pure",
-	"version": "3.5.4",
+	"version": "4.0.0",
 	"description": "JS-only implementation of randomBytes, intended for use with React Native and other limited runtimes",
 	"main": "./dist/index.js",
 	"repository": "github:RobertFischer/randombytes-pure",
@@ -9,7 +9,7 @@
 		"build": "yarn test && tsc --project tsconfig.json",
 		"release": "yarn build && semantic-release",
 		"head:checkCommit": "commitlint --from=HEAD~1",
-		"pretty": "prettier --insert-pragma --write ./*.ts ./*.js ./*.md ./*.json"
+		"pretty": "prettier --insert-pragma --write ./*.ts ./*.js ./*.md"
 	},
 	"keywords": [
 		"react-native",
