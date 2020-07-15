@@ -1,5 +1,7 @@
 <!-- @format -->
 
+![Validate code on push](https://github.com/RobertFischer/react-native-randombytes/workflows/Validate%20code%20on%20push/badge.svg)
+
 # RandomBytes-Pure
 
 ## Motivation
