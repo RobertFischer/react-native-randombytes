@@ -84,7 +84,7 @@
 		"semi": true
 	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+		"*.{yaml,yml,js,jsx,ts,tsx,md,html,css}": "prettier --write"
 	},
 	"private": false,
 	"files": [
