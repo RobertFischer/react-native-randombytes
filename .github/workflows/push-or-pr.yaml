@@ -20,11 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - run: git checkout HEAD^
       - run: yarn install --frozen-lockfile --non-interactive --link-duplicates
       - run: yarn run head:checkCommit
-  upgrade:
+  dependencyUpgradeAndAudit:
     needs:
       - commitlint
     runs-on: ubuntu-latest
@@ -37,19 +37,10 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "build(dependencies): Automated upgrade of dependencies"
-  audit:
-    needs:
-      - upgrade
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-      - run: git checkout HEAD^
       - run: yarn audit --groups dependencies
   pretty:
     needs:
-      - upgrade
+      - commitlint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
