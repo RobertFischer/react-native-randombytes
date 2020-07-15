@@ -9,7 +9,9 @@
 		"build": "yarn test && tsc --project tsconfig.json",
 		"release": "yarn build && semantic-release",
 		"head:checkCommit": "commitlint --from=HEAD~1",
-		"pretty": "prettier --insert-pragma --write ./*.ts ./*.js ./*.md"
+		"pretty": "prettier --insert-pragma --write ./*.ts ./*.js ./*.md",
+		"postinstall": "yarn build",
+		"prepublish": "yarn build"
 	},
 	"keywords": [
 		"react-native",
