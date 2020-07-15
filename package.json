@@ -89,5 +89,8 @@
 		"package.json",
 		"yarn.lock",
 		"dist/*"
-	]
+	],
+	"publicConfig": {
+		"access": "public"
+	}
 }
