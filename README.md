@@ -19,7 +19,7 @@ This library uses the [SJCL](https://bitwiseshiftleft.github.io/sjcl/) pseudo-ra
 ## Usage
 
 ```js
-import randomBytes from "react-native-randombytes";
+import randomBytes from "randombytes-pure";
 
 const rand = randomBytes(4);
 ```
@@ -29,14 +29,14 @@ That is it. Now `rand` is a [`Buffer`](https://www.npmjs.com/package/buffer) wit
 ## Installation
 
 ```bash
-yarn add @robertfischer/randombytes-pure
+yarn add randombytes-pure
 ```
 
 If you want to use this module anywhere you might otherwise use `react-native-randombytes`, _AND_ you are using [`yarn`](https://classic.yarnpkg.com/) or some other build tool that supports `"resolutions"` in `package.json`, then just add this to your `package.json`:
 
 ```json
 "resolutions": {
-	"react-native-randombytes": "@robertfischer/randombytes-pure"
+	"react-native-randombytes": "randombytes-pure"
 }
 ```
 

@@ -1,12 +1,9 @@
 {
-	"name": "@robertfischer/randombytes-pure",
+	"name": "randombytes-pure",
 	"version": "3.5.4",
 	"description": "JS-only implementation of randomBytes, intended for use with React Native and other limited runtimes",
 	"main": "./dist/index.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/RobertFischer/react-native-randombytes.git"
-	},
+	"repository": "github:RobertFischer/randombytes-pure",
 	"scripts": {
 		"test": "tsc --noEmit --project tsconfig.json && jest",
 		"build": "yarn test && tsc --project tsconfig.json",
@@ -86,5 +83,7 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
-	}
+	},
+	"private": false,
+	"files": [ "package.json", "yarn.lock", "dist/*" ]
 }
