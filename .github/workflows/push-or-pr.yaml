@@ -47,6 +47,7 @@ jobs:
       - pretty
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile --non-interactive --link-duplicates
