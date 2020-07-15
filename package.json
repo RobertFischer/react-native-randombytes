@@ -1,5 +1,5 @@
 {
-	"name": "@RobertFischer/randombytes-pure",
+	"name": "@robertfischer/randombytes-pure",
 	"version": "3.5.4",
 	"description": "JS-only implementation of randomBytes, intended for use with React Native and other limited runtimes",
 	"main": "./dist/index.js",
