@@ -3,7 +3,7 @@
 import "./ensureBuffer";
 import sjcl from "sjcl";
 
-type Callback = (err?:Error, buff?:Buffer) => any;
+type Callback = (err?: Error, buff?: Buffer) => any;
 
 function cbWarnError(err: Error, _: Buffer = null): void {
 	if (err) {
