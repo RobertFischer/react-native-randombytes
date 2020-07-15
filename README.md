@@ -1,119 +1,39 @@
-# react-native-randombytes
+<!-- @format -->
+
+# RandomBytes-Pure
+
+## Motivation
+
+This is a fork of [`react-native-randombytes`](https://www.npmjs.com/package/react-native-randombytes), and is a superset of its exposed `randomBytes` API.
+You probably want to use that library if you're comfortable/capable of using
+[`react-native link`](https://reactnative.dev/docs/linking-libraries-ios#automatic-linking). If, however, you're using the
+[Expo "Managed Workflow"](https://docs.expo.io/introduction/managed-vs-bare/#managed-workflow) or otherwise don't want to mess around with native dependencies, then this library is
+the one for you.
+
+## Implementation Overview
+
+This library uses the [SJCL](https://bitwiseshiftleft.github.io/sjcl/) pseudo-random generator. That library is small, fast, and memory-efficient.
 
 ## Usage
 
 ```js
-import { randomBytes } from 'react-native-randombytes'
+import randomBytes from "react-native-randombytes";
 
-// synchronous API
-// uses SJCL
-const rand = randomBytes(4)
-
-// asynchronous API
-// uses iOS-side SecRandomCopyBytes
-randomBytes(4, (err, bytes) => {
-  // bytes is a Buffer object
-  console.log(bytes.toString('hex'))
-})
+const rand = randomBytes(4);
 ```
+
+That is it. Now `rand` is a [`Buffer`](https://www.npmjs.com/package/buffer) with 4 pseudo-random bytes. Enjoy.
 
 ## Installation
 
-1. Follow the steps in the next section
-1. You have two options depending on your needs:
-    1. if you're trying to get Node.js or browser crypto modules working in React Native, follow the installation workflow in [react-native-crypto](https://github.com/tradle/react-native-crypto).
-    1. if you only need asynchronous random bytes generation, and don't care about getting back `Buffer` objects, you can do the following:
+If you want to use this module anywhere you might otherwise use `react-native-randombytes`, _AND_ you are using [`yarn`](https://classic.yarnpkg.com/) or some other build tool that supports `"resolutions"` in `package.json`, then just add this to your `package.json`:
 
-    ```js
-    import { NativeModules } from 'react-native'
-    const { RNRandomBytes } = NativeModules
-    RNRandomBytes.randomBytes(32, (err, bytes) => {
-      // bytes is a base64string
-    })
-    ```
-
-### Automatic - Android / iOS (recommended)
-
-```bash
-react-native link
-```
-
-### Manual
-
-If Automatic installation failed you, dry your tears and read on.
-
-#### `iOS`
-
-* Drag RNRandomBytes.xcodeproj from node_modules/react-native-randombytes into your XCode project.
-
-* Click on the project in XCode, go to Build Phases, then Link Binary With Libraries and add `libRNRandomBytes.a`
-
-Confused? See an example with screenshots [here](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)
-
-
-#### `Android`
-
-* Update Gradle Settings
-
-```gradle
-// file: android/settings.gradle
-...
-
-include ':randombytes', ':app'
-project(':randombytes').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-randombytes/android')
-```
-
-* Update Gradle Build
-
-```gradle
-// file: android/app/build.gradle
-...
-
-dependencies {
-    ...
-    compile project(':randombytes')
+```json
+"resolutions": {
+	"react-native-randombytes": "RobertFischer/react-native-randombytes"
 }
 ```
 
-* Register React Package
+## Versioning
 
-```java
-...
-import com.bitgo.randombytes.RandomBytesPackage // import
-
-public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
-
-    private ReactInstanceManager mReactInstanceManager;
-    private ReactRootView mReactRootView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mReactRootView = new ReactRootView(this);
-        mReactInstanceManager = ReactInstanceManager.builder()
-                .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-                .setJSMainModuleName("index.android")
-                .addPackage(new MainReactPackage())
-                .addPackage(new RandomBytesPackage()) // register package here
-                .setUseDeveloperSupport(BuildConfig.DEBUG)
-                .setInitialLifecycleState(LifecycleState.RESUMED)
-                .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "AwesomeProject", null);
-        setContentView(mReactRootView);
-    }
-...
-
-```
-
-### `Windows`
- 
-
-```bash
-react-native link react-native-randombytes
-```
-
-Depending on your project versions and the state of RN-Windows this may not always work. If it does not, a manual installation guide can be found here:
-
-https://github.com/Microsoft/react-native-windows/blob/master/docs/LinkingLibrariesWindows.md
-
+This library follows semver using [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) and [Conventional Commits](https://www.conventionalcommits.org/).

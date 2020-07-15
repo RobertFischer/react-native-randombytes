@@ -1,3 +1,5 @@
+/** @format */
+
 module.exports = {
 	branches: ["master"],
 	plugins: [
@@ -6,6 +8,7 @@ module.exports = {
 		"@semantic-release/changelog",
 		"@semantic-release/git",
 		"@semantic-release/github",
+		"@semantic-release/npm",
 	],
 	assets: ["CHANGELOG.md", "package.json", "yarn.lock"],
 	preset: "conventionalcommits",

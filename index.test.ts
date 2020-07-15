@@ -1,7 +1,8 @@
+/** @format */
+
 import rand from "./index";
 
 describe("randomBytes", () => {
-
 	it("installs Buffer (if missing)", () => {
 		expect(global).toHaveProperty("Buffer");
 		expect(global.Buffer).not.toBeNil();
@@ -16,5 +17,4 @@ describe("randomBytes", () => {
 		const second = rand(4096);
 		expect(first).not.toBe(second);
 	});
-
 });

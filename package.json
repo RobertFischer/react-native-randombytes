@@ -1,7 +1,7 @@
 {
 	"name": "randombytes-pure",
 	"version": "3.5.4",
-	"description": "JS-only implementation of randomBytes, intended for use with React Native",
+	"description": "JS-only implementation of randomBytes, intended for use with React Native and other limited runtimes",
 	"main": "./dist/index.js",
 	"repository": {
 		"type": "git",
@@ -10,7 +10,9 @@
 	"scripts": {
 		"test": "tsc --noEmit --project tsconfig.json && jest",
 		"build": "yarn test && tsc --project tsconfig.json",
-		"release": "yarn build && semantic-release"
+		"release": "yarn build && semantic-release",
+		"head:checkCommit": "commitlint --from=HEAD~1",
+		"pretty": "prettier --insert-pragma --write ./*.ts ./*.js ./*.md ./*.json"
 	},
 	"keywords": [
 		"react-native",
@@ -33,6 +35,8 @@
 		"@babel/core": "^7.10.5",
 		"@babel/preset-env": "^7.10.4",
 		"@babel/preset-typescript": "^7.10.4",
+		"@commitlint/cli": "^9.1.1",
+		"@commitlint/config-conventional": "^9.1.1",
 		"@semantic-release/changelog": "^5.0.1",
 		"@semantic-release/commit-analyzer": "^8.0.1",
 		"@semantic-release/git": "^9.0.0",
@@ -42,8 +46,12 @@
 		"@types/sjcl": "^1.0.29",
 		"babel-jest": "^26.1.0",
 		"conventional-changelog-conventionalcommits": "^4.3.0",
+		"husky": "^4.2.5",
 		"jest": "^26.1.0",
 		"jest-extended": "^0.11.5",
+		"lint-staged": "^10.2.11",
+		"precise-commits": "^1.0.2",
+		"prettier": "^2.0.5",
 		"semantic-release": "^17.1.1",
 		"typescript": "^3.9.6"
 	},
@@ -64,5 +72,19 @@
 			],
 			"@babel/preset-typescript"
 		]
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "lint-staged && yarn test",
+			"pre-push": "yarn test"
+		}
+	},
+	"prettier": {
+		"useTabs": true,
+		"semi": true
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
 	}
 }

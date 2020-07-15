@@ -1,3 +1,5 @@
-if (typeof Buffer === 'undefined') {
-	global.Buffer = require('buffer').Buffer;
+/** @format */
+
+if (typeof Buffer === "undefined") {
+	global.Buffer = require("buffer").Buffer;
 }
