@@ -28,14 +28,28 @@ That is it. Now `rand` is a [`Buffer`](https://www.npmjs.com/package/buffer) wit
 
 ## Installation
 
+### Yarn
+
 ```bash
 yarn add randombytes-pure
 ```
 
-or
+### npm
 
 ```bash
 npm install --save randombytes-pure
+```
+
+### Overriding Dependencies
+
+If you want to use this package in place of `react-native-randombytes`, and you are using `yarn` (or something else that supports the `"resolutions"` field), then you can do this:
+
+```json
+{
+	"resolutions": {
+		"react-native-randombytes": "github:RobertFischer/randombytes-pure#v4.1.0"
+	}
+}
 ```
 
 ## Versioning
